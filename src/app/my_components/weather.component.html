@@ -1,0 +1,20 @@
+
+<div class='table' *ngIf="weatherData">
+  <div class="something">
+    <input type="text"
+    [(ngModel)]="cityName" placeholder="Enter City Name">
+    <button (click)="getWeatherDate()"> getWeather </button>
+  </div>
+    <div class='title'>Weather Report for: {{ weatherData.location.name }}</div>
+    <div class='bubble-others-container'>
+      <div class='bubble'>
+        <img [src]="weatherData.current.condition.icon" alt="">
+        <h3>{{ weatherData.current.condition.text}}</h3>
+      </div>
+      <div class='others'>
+          <span>Temperature is {{ weatherData.current.temp_f }}</span> <br>
+          <span>Humidity is {{ weatherData.current.humidity }}</span> <br>
+          <span>The weather feels like {{ weatherData.current.feelslike_f }}</span> 
+      </div>
+    </div>
+</div>
